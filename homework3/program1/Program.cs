@@ -35,7 +35,7 @@ namespace program1
 
     class Round : Shape
     {
-        private double r;//三角形的三边长
+        private double r;//圆形的半径
         public Round()
         {    
             Console.WriteLine("创建圆形,请输入半径：");
