@@ -28,7 +28,7 @@ namespace program1.Tests
             os.AddOrder(order1);
 
             //将结果和预测结果进行比较
-            Dictionary<uint,Order> result = new Dictionary<uint,Order>();
+            Dictionary<uint, Order> result = new Dictionary<uint, Order>();
             result[1] = order1;
             CollectionAssert.AreEqual(result, os.orderDic);
         }
@@ -105,7 +105,7 @@ namespace program1.Tests
             List<Order> orders = os.QueryAllOrders();
             List<Order> result = new List<Order>();
             result.Add(order1);
-            CollectionAssert.AreEqual(result,orders);
+            CollectionAssert.AreEqual(result, orders);
         }
 
         [TestMethod()]
@@ -276,31 +276,34 @@ namespace program1.Tests
             CollectionAssert.AreEqual(result, orders);
         }
         /* 
-         * 在判断集合是否相等时，会出错，未找到原因
-         * 
+         * 在判断集合是否相等时，AreEqual会出错，未找到原因
+         * Equals方法就没问题
          */
         [TestMethod()]
         public void ImportTest1()
         {
-                //初始化订单
-                Customer customer1 = new Customer(1, "Customer1");
-                Goods milk = new Goods(1, "Milk", 69.9);
-                OrderDetails orderDetails1 = new OrderDetails(1, milk, 10000);
-                Order order1 = new Order(1, customer1);
-                order1.AddDetails(orderDetails1);//顾客1买milk，订单1
-                                                 //添加订单
-                OrderService os = new OrderService();
-                os.AddOrder(order1);
-                List<Order> orders = os.QueryAllOrders();
-                //XML序列化订单
-                os.Export("orders1.xml", orders);
-                //XML反序列化
-                List<Order> orders2 = os.Import("orders1.xml") as List<Order>;
-                Assert.AreEqual(orders2.Count, orders.Count);
-                //CollectionAssert.AreEqual(orders2, orders);
+            //初始化订单
+            Customer customer1 = new Customer(1, "Customer1");
+            Goods milk = new Goods(1, "Milk", 69.9);
+            OrderDetails orderDetails1 = new OrderDetails(1, milk, 10000);
+            Order order1 = new Order(1, customer1);
+            order1.AddDetails(orderDetails1);//顾客1买milk，订单1
+                                             //添加订单
+            OrderService os = new OrderService();
+
+            os.AddOrder(order1);
+            List<Order> orders = os.QueryAllOrders();
+
+            //XML序列化订单
+            os.Export("orders1.xml", orders);
+
+            //XML反序列化
+            List<Order> orders2 = os.Import("orders1.xml") as List<Order>;
+            CollectionAssert.Equals(orders, orders2);
+
 
         }
-        
+
 
         [TestMethod()]
         [ExpectedException(typeof(FileNotFoundException))]
