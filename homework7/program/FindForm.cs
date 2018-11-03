@@ -23,7 +23,7 @@ namespace program
             {
                 uint id = uint.Parse(textBox1.Text.ToString());
                 new OrderForm(id).ShowDialog();
-                //this.Close();
+                this.Close();
             }
             catch(Exception e1)
             {
@@ -38,7 +38,7 @@ namespace program
             {
                 string s = textBox2.Text.ToString();
                 new OrderForm(s,0).ShowDialog();
-               // this.Close();
+                this.Close();
             }
             catch (Exception e1)
             {
