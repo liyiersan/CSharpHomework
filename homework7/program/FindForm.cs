@@ -22,8 +22,8 @@ namespace program
             try
             {
                 uint id = uint.Parse(textBox1.Text.ToString());
-                OrderForm.bindingSource1.DataSource = OrderForm.os.GetById(id);
-                this.Close();
+                new OrderForm(id).ShowDialog();
+                //this.Close();
             }
             catch(Exception e1)
             {
@@ -37,8 +37,8 @@ namespace program
             try
             {
                 string s = textBox2.Text.ToString();
-                OrderForm.bindingSource1.DataSource = OrderForm.os.QueryByGoodsName(s);
-                this.Close();
+                new OrderForm(s,0).ShowDialog();
+               // this.Close();
             }
             catch (Exception e1)
             {
@@ -51,7 +51,7 @@ namespace program
             try
             {
                 string s = textBox3.Text.ToString();
-                OrderForm.bindingSource1.DataSource = OrderForm.os.QueryByCustomerName(s);
+                new OrderForm(s).ShowDialog();
                 this.Close();
             }
             catch (Exception e1)

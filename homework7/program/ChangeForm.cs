@@ -33,7 +33,6 @@ namespace program
                 uint i = uint.Parse(textBox2.Text.ToString());
                 Customer customer = new Customer(i, s);
                 OrderForm.os.UpdateCustomer(Id, customer);
-                OrderForm.bindingSource1.DataSource = OrderForm.os.orderDict.Values.ToList();
                 this.Close();
             }
             catch (Exception e1)

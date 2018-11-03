@@ -47,9 +47,28 @@ namespace program
             bindingSource1.DataSource = os.orderDict.Values.ToList();
         }
 
+        public OrderForm(uint id)
+        {
+            InitializeComponent();
+            bindingSource1.DataSource = OrderForm.os.GetById(id);
+        }
+
+        public OrderForm(string s, int i)
+        {
+            InitializeComponent();
+            bindingSource1.DataSource = OrderForm.os.QueryByGoodsName(s);
+        }
+
+        public OrderForm(string s)
+        {
+            InitializeComponent();
+            bindingSource1.DataSource = OrderForm.os.QueryByGoodsName(s);
+        }
+
         private void createButton_Click(object sender, EventArgs e)
         {
             new CreateForm().ShowDialog();
+            bindingSource1.DataSource = OrderForm.os.orderDict.Values.ToList();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -80,7 +99,7 @@ namespace program
                 string s = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 uint i = uint.Parse(s);
                 new ChangeForm(i).ShowDialog();
-
+                bindingSource1.DataSource = OrderForm.os.orderDict.Values.ToList();
             }
             catch (Exception e1)
             {

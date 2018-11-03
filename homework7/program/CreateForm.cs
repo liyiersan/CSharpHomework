@@ -61,8 +61,7 @@ namespace program
                 Customer customer = new Customer(cId, CustomerNameTextBox.Text.ToString());
                 order.Id = Id;
                 order.Customer = customer;
-                OrderForm.os.AddOrder(order);
-                OrderForm.bindingSource1.DataSource = OrderForm.os.orderDict.Values.ToList();
+                OrderForm.os.AddOrder(order);                
                 this.Close();
             }
             catch (Exception e1)
