@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ordertest {
+namespace order {
 
     /// <summary>
     /// OrderDetail class : a entry of an order object

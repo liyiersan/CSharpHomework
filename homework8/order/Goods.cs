@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ordertest {
+namespace order {
     /// <summary>
     /// Goods class:the message of goods
     /// </summary>

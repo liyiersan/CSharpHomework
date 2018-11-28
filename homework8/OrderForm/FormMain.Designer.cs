@@ -79,7 +79,7 @@
             // 
             // orderBindingSource
             // 
-            this.orderBindingSource.DataSource = typeof(ordertest.Order);
+            this.orderBindingSource.DataSource = typeof(order.Order);
             // 
             // flowLayoutPanel1
             // 

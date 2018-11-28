@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Text.RegularExpressions;
 
-namespace ordertest {
+namespace order {
     /// <summary>
     /// OrderService:provide ordering service,
     /// like add order, remove order, query order and so on

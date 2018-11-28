@@ -100,7 +100,7 @@
             // 
             // customerBindingSource
             // 
-            this.customerBindingSource.DataSource = typeof(ordertest.Customer);
+            this.customerBindingSource.DataSource = typeof(order.Customer);
             // 
             // label2
             // 
@@ -134,7 +134,7 @@
             // 
             // orderBindingSource
             // 
-            this.orderBindingSource.DataSource = typeof(ordertest.Order);
+            this.orderBindingSource.DataSource = typeof(order.Order);
             // 
             // groupBox2
             // 
@@ -161,7 +161,7 @@
             // 
             // goodsBindingSource
             // 
-            this.goodsBindingSource.DataSource = typeof(ordertest.Goods);
+            this.goodsBindingSource.DataSource = typeof(order.Goods);
             // 
             // dataGridView1
             // 
